@@ -1,21 +1,19 @@
+// REST
+
+function soma(a, b, ...pararms) {
+  return pararms;
+}
+
+console.log(soma(1, 3, 8, 10, 40));
+
+// SPREAD
+
 const usuario = {
   nome: "Domingos",
   idade: 19,
-  endereco: {
-    cidade: "Luanda",
-    estado: "Cazenga",
-  },
+  empresa: "SNIR",
 };
 
-const {
-  nome,
-  idade,
-  endereco: { cidade },
-} = usuario;
-console.log(nome, idade, cidade);
+const usuario2 = { ...usuario, nome: "João" };
 
-function mostraNome({ nome, idade }) {
-  console.log(nome, idade);
-}
-
-mostraNome(usuario);
+console.log(usuario2);
