@@ -1,8 +1,11 @@
-class Matermatica {
+function teste(x){
+  let y=2;
 
-  static soma (num1, num2){
-  return num1 + num2;
+  if(x>5){
+
+    let y = 4
+console.log(x, y)
   }
 }
 
-console.log(Matermatica.soma(84645465465446, 54654651681616161561616));
+teste(10)
