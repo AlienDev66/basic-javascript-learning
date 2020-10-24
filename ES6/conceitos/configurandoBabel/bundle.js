@@ -6,20 +6,19 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-alert("Test");
-
-var Test = /*#__PURE__*/function () {
-  function Test() {
-    _classCallCheck(this, Test);
+var Matermatica = /*#__PURE__*/function () {
+  function Matermatica() {
+    _classCallCheck(this, Matermatica);
   }
 
-  _createClass(Test, [{
-    key: "metodo",
-    value: function metodo() {}
-  }, {
-    key: "outroMetodo",
-    value: function outroMetodo() {}
+  _createClass(Matermatica, null, [{
+    key: "soma",
+    value: function soma(num1, num2) {
+      return num1 + num2;
+    }
   }]);
 
-  return Test;
+  return Matermatica;
 }();
+
+console.log(Matermatica.soma(84645465465446, 54654651681616161561616));
