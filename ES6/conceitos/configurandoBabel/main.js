@@ -1,11 +1,25 @@
-function teste(x){
-  let y=2;
+const arr = [1, 3, 4, 5, 8, 10];
 
-  if(x>5){
+const newArr = arr.map((item, index) => {
+  return item + index;
+});
 
-    let y = 4
-console.log(x, y)
-  }
-}
+console.log(newArr);
 
-teste(10)
+const sum = arr.reduce((total, next) => {
+  return total + next;
+});
+
+console.log(sum);
+
+const filter = arr.filter((item) => {
+  return item % 2 === 0;
+});
+
+console.log(filter);
+
+const find = arr.find((item) => {
+  return item === 4;
+});
+
+console.log(find);
