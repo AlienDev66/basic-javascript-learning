@@ -15,12 +15,14 @@
   !*** ./funcoes.js ***!
   \********************/
 /*! namespace exports */
+/*! export mult [provided] [no usage info] [missing usage info prevents renaming] */
 /*! export soma [provided] [no usage info] [missing usage info prevents renaming] */
+/*! export sub [provided] [no usage info] [missing usage info prevents renaming] */
 /*! other exports [not provided] [no usage info] */
 /*! runtime requirements: __webpack_require__.r, __webpack_exports__, __webpack_require__.d, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"soma\": () => /* binding */ soma\n/* harmony export */ });\nfunction soma(a, b) {\n  return a + b;\n}\n\n//# sourceURL=webpack://conceitos/./funcoes.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"soma\": () => /* binding */ soma,\n/* harmony export */   \"sub\": () => /* binding */ sub,\n/* harmony export */   \"mult\": () => /* binding */ mult\n/* harmony export */ });\nfunction soma(a, b) {\n  return a + b;\n}\nfunction sub(a, b) {\n  return a - b;\n}\nfunction mult(a, b) {\n  return a * b;\n}\n\n//# sourceURL=webpack://conceitos/./funcoes.js?");
 
 /***/ }),
 
@@ -33,7 +35,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*! runtime requirements: __webpack_require__, __webpack_require__.r, __webpack_exports__, __webpack_require__.* */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _funcoes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n\nconsole.log((0,_funcoes__WEBPACK_IMPORTED_MODULE_0__.soma)(1, 2));\n\n//# sourceURL=webpack://conceitos/./main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _funcoes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./funcoes */ \"./funcoes.js\");\n// import { soma, sub } from \"./funcoes\";\n\nconsole.log(_funcoes__WEBPACK_IMPORTED_MODULE_0__.soma(1, 2)); // console.log(sub(10, 22));\n\n//# sourceURL=webpack://conceitos/./main.js?");
 
 /***/ })
 
