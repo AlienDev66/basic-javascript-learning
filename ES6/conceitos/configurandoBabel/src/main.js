@@ -1,7 +1,10 @@
+import api from "./api";
+
 class App {
   constructor() {
     this.repositories = [];
     this.formEl = document.getElementById("repo-form");
+    this.inputEl = document.querySelector("input[name=repository]");
     this.listEl = document.getElementById("repo-list");
 
     this.registerHandler();
@@ -11,16 +14,30 @@ class App {
     this.formEl.onsubmit = (event) => this.addRepository(event);
   }
 
-  addRepository(event) {
+  async addRepository(event) {
     event.preventDefault();
+    const repoInput = this.inputEl.value;
+
+    if (repoInput === 0) return;
+
+    const response = await api.get(`/repos/${repoInput}`);
+
+    console.log(response);
+    const {
+      name,
+      description,
+      owner: { avatar_url },
+      html_url,
+    } = response.data;
 
     this.repositories.push({
-      name: "alienshikdaia.com",
-      description: "O mundo roda como roda",
-      avatar_url:
-        'https://avatars1.githubusercontent.com/u/59874434?s=400&u=7f9f2e1809bb5e4f30cbe000a56b65290c317616&v=4"',
-      html_url: "https://github.com/AlienDev66/InviteYou-frontend",
+      name,
+      description,
+      avatar_url,
+      html_url,
     });
+
+    this.inputEl.value = "";
 
     this.render();
   }
@@ -39,6 +56,7 @@ class App {
 
       let linkEl = document.createElement("a");
       linkEl.setAttribute("target", "_blank");
+      linkEl.setAttribute("href", repo.html_url);
       linkEl.appendChild(document.createTextNode("Acessar"));
 
       let listItemEl = document.createElement("li");
