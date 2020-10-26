@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import Header from "../../components/Header";
 import api from "../../services/api";
+import { Link } from "react-router-dom";
 import { Container, ProductList, Article, Actions } from "./styles";
 
 interface ProductProps {
@@ -51,13 +53,14 @@ export default function Main() {
 
   return (
     <Container>
+      <Header />
       <ProductList>
         {products.map((product) => (
           <Article key={Math.random()}>
             <strong>{product.title}</strong>
             <p>{product.description}</p>
 
-            <a href="">Acessar</a>
+            <Link to={`/product/${product._id}`}>Acessar</Link>
           </Article>
         ))}
         <Actions>
